@@ -9,6 +9,22 @@ class CartPage extends StatelessWidget {
   Widget build(BuildContext context) {
     var provider = context.watch<CartProvider>();
 
-    return Scaffold(appBar: AppBar(title: const Text('Halaman Keranjang')));
+    return Scaffold(
+      appBar: AppBar(title: const Text('Halaman Keranjang')),
+      body: Column(
+        children: [
+          Expanded(
+            child: ListView.builder(
+              itemCount: provider.items.length,
+              itemBuilder: (context, index) => ListTile(
+                leading: const Icon(Icons.fastfood_outlined),
+                title: Text(provider.items[index].name),
+                subtitle: Text('Rp ${provider.items[index].price}'),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
