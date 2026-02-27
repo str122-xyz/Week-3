@@ -10,6 +10,7 @@ void main() {
   );
 }
 
+//Halaman Keranjang
 class CartModel extends ChangeNotifier {
   final List<String> _items = [];
 
@@ -26,6 +27,7 @@ class CartModel extends ChangeNotifier {
   }
 }
 
+//Main widget
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -42,6 +44,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
+//Add Button
 class MyCatalog extends StatelessWidget {
   const MyCatalog({super.key});
 
@@ -92,5 +95,15 @@ class AddButton extends StatelessWidget {
           ? const Icon(Icons.check, color: Colors.green)
           : const Text('Tambah'),
     );
+  }
+}
+
+//Halaman Keranjang
+class MyCart extends StatelessWidget {
+  const MyCart({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    var cart = context.watch<CartModel>();
   }
 }
