@@ -74,15 +74,18 @@ class CatalogPage extends StatelessWidget {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
           ),
+          color: Colors.grey.shade50,
           child: ListTile(
             contentPadding: const EdgeInsets.symmetric(
               horizontal: 16,
               vertical: 8,
             ),
-            leading: CircleAvatar(
-              backgroundColor: Colors.orange.shade100,
-              radius: 25,
-              child: const Icon(Icons.fastfood_rounded, color: Colors.orange),
+            leading: Image.asset(
+              _products[index].imagePath,
+              width: 40,
+              height: 40,
+              errorBuilder: (context, error, stackTrace) =>
+                  const Icon(Icons.fastfood, color: Colors.orange, size: 40),
             ),
             title: Text(
               _products[index].name,
