@@ -23,7 +23,7 @@ class CatalogPage extends StatelessWidget {
       id: '3',
       name: 'Mie ayam',
       price: 15000,
-      imagePath: 'assets/image/mieayam.jpg',
+      imagePath: 'assets/image/mie-ayam.png',
     ),
     Product(
       id: '4',
