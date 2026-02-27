@@ -13,12 +13,20 @@ class AddButtonWidget extends StatelessWidget {
       (provider) => provider.isInCart(product.id),
     );
 
-    return TextButton(
+    return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        backgroundColor: isInCart ? Colors.green.shade50 : Colors.deepPurple,
+        foregroundColor: isInCart ? Colors.green : Colors.white,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadiusGeometry.circular(20),
+        ),
+        elevation: isInCart ? 0 : 2,
+      ),
       onPressed: isInCart
           ? null
           : () => context.read<CartProvider>().addItem(product),
       child: isInCart
-          ? const Icon(Icons.check, color: Colors.green)
+          ? const Icon(Icons.check_circle, color: Colors.green)
           : const Text('Tambah'),
     );
   }
