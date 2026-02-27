@@ -7,11 +7,36 @@ class CatalogPage extends StatelessWidget {
   const CatalogPage({super.key});
 
   static final List<Product> _products = [
-    Product(id: '1', name: 'Nasi Goreng', price: 15000),
-    Product(id: '2', name: 'Bakso', price: 16000),
-    Product(id: '3', name: 'Mie ayam', price: 15000),
-    Product(id: '4', name: 'Es Teh', price: 6000),
-    Product(id: '5', name: 'Kopi', price: 10000),
+    Product(
+      id: '1',
+      name: 'Nasi Goreng',
+      price: 15000,
+      imagePath: 'assets/image/nasi-goreng.png',
+    ),
+    Product(
+      id: '2',
+      name: 'Bakso',
+      price: 16000,
+      imagePath: 'assets/image/bakso.png',
+    ),
+    Product(
+      id: '3',
+      name: 'Mie ayam',
+      price: 15000,
+      imagePath: 'assets/image/mieayam.jpg',
+    ),
+    Product(
+      id: '4',
+      name: 'Es Teh',
+      price: 6000,
+      imagePath: 'assets/image/esteh.png',
+    ),
+    Product(
+      id: '5',
+      name: 'Kopi',
+      price: 10000,
+      imagePath: 'assets/image/coffee.png',
+    ),
   ];
 
   @override
