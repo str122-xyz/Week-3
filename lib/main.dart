@@ -41,3 +41,24 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+class MyCatalog extends StatelessWidget {
+  const MyCatalog({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final products = ['Nasi Goreng', 'Bakso', 'Myayam', 'Es Teh', 'Kopi'];
+
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Katalog Makanan'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.shopping_cart),
+            onPressed: () => Navigator.pushNamed(context, '/cart'),
+          ),
+        ],
+      ),
+    );
+  }
+}
