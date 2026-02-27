@@ -15,11 +15,44 @@ class CartPage extends StatelessWidget {
         children: [
           Expanded(
             child: ListView.builder(
+              padding: const EdgeInsets.all(12),
               itemCount: provider.items.length,
-              itemBuilder: (context, index) => ListTile(
-                leading: const Icon(Icons.fastfood_outlined),
-                title: Text(provider.items[index].name),
-                subtitle: Text('Rp ${provider.items[index].price}'),
+              itemBuilder: (context, index) => Card(
+                elevation: 1,
+                margin: const EdgeInsets.symmetric(vertical: 6),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: ListTile(
+                  leading: Container(
+                    padding: const EdgeInsets.all(8),
+                    decoration: BoxDecoration(
+                      color: Colors.blue.shade50,
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Image.asset(
+                      provider.items[index].imagePath,
+                      width: 30,
+                      height: 30,
+                      errorBuilder: (context, error, stackTrace) => const Icon(
+                        Icons.fastfood,
+                        size: 30,
+                        color: Colors.orange,
+                      ),
+                    ),
+                  ),
+                  title: Text(
+                    provider.items[index].name,
+                    style: const TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  subtitle: Text(
+                    'Rp ${provider.items[index].price}',
+                    style: TextStyle(
+                      color: Colors.green.shade700,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ),
               ),
             ),
           ),
