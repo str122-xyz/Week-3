@@ -15,7 +15,7 @@ class AddButtonWidget extends StatelessWidget {
 
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        backgroundColor: isInCart ? Colors.green.shade50 : Colors.deepPurple,
+        backgroundColor: isInCart ? Colors.green.shade50 : Colors.blueAccent,
         foregroundColor: isInCart ? Colors.green : Colors.white,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadiusGeometry.circular(20),
