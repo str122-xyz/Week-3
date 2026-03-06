@@ -10,7 +10,22 @@ class CartPage extends StatelessWidget {
     var provider = context.watch<CartProvider>();
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Keranjang')),
+      appBar: AppBar(
+        title: const Text(
+          'Keranjang',
+          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+        ),
+        iconTheme: const IconThemeData(color: Colors.white),
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Color(0xFF0072FF), Color(0xFF00C6FF)],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
+          ),
+        ),
+      ),
       body: Column(
         children: [
           Expanded(
